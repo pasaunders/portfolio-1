@@ -100,6 +100,10 @@ footer p {
     display: none;
   }
 
+  header img {
+    margin-left: 5%;
+  }
+
   .icon-github:hover {
     background: #fff;
     color: #303d74;
@@ -129,13 +133,13 @@ footer p {
     background: #fff;
     color: #303d74;
   }
-}
 
-p {
-  width: 40%;
-  margin-left: 30%;
-}
+  p {
+    width: 40%;
+    margin-left: 30%;
+  }
 
-footer p {
-  margin-left: 5%;
+  footer p {
+    margin-left: 5%;
+  }
 }
