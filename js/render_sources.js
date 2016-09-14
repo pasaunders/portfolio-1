@@ -10,10 +10,12 @@ function Interest(interest) {
 
 Interest.prototype.toHtml = function() {
   var $interestTemplate = $('.template').clone();
+  var daysAgo = new Date() - new Date(this.lastWorked);
   $interestTemplate.find('h2').text(this.interestName);
   $interestTemplate.find('img').attr('src', this.interestImg);
-  $interestTemplate.find('p').text(this.interestText);
+  $interestTemplate.find('#description').text(this.interestText);
   $interestTemplate.find('a').attr('href', this.interestUrl);
+  $interestTemplate.find('span').text(Math.floor(daysAgo / 1000 / 60 / 60 / 24));
   $interestTemplate.removeClass('template');
   $interestTemplate.addClass('interest');
   return $interestTemplate;
