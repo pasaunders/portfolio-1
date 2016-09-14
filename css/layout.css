@@ -11,6 +11,10 @@ main {
   margin-left: 5%;
 }
 
+.template {
+  display: none;
+}
+
 footer {
   color: white;
   height: 5em;
