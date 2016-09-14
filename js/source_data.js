@@ -7,13 +7,13 @@ var interests = [
   },
   {
     interestName: 'Voice Over',
-    interestImg: 'http://placehold.it/300x300',
+    interestImg: 'img/vo.png',
     interestText: 'Steven has produced audiobooks for Audible.com and provided voices for several small projects, including two games on Steam.',
     interestUrl: 'https://store.steampowered.com/app/278570'
   },
   {
     interestName: 'Magic',
-    interestImg: 'http://placehold.it/300x300',
+    interestImg: 'img/magic.png',
     interestText: 'Magic: The Gathering is a collectible trading card game. Steven and a few other members of Code Fellows play a variant called EDH or Commander.',
     interestUrl: 'http://tappedout.net/mtg-decks/10-08-16-Ptu-werewolves/'
   }
