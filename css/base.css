@@ -1,0 +1,57 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header img {
+  height: 4em;
+  width: 4em;
+  float: left;
+  margin-left: 0.5em;
+  margin-top: 1.0em;
+  border-radius: 50%;
+}
+
+main img {
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+}
+
+h1 {
+  margin-top: 1.0em;
+  margin-left: 0.3em;
+  font-size: 2em;
+  float: left;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+p {
+  margin: 1em;
+}
+
+footer p {
+  margin-top: 1.5em;
+  font-size: 1.2em;
+  float: left;
+}
+
+@media only screen and (min-width: 640px) {
+  header img {
+    margin-left: 5%;
+  }
+
+  p {
+    width: 40%;
+    margin-left: 30%;
+  }
+
+  footer p {
+    margin-left: 5%;
+  }
+}

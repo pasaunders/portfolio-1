@@ -1,0 +1,23 @@
+header {
+  height: 7em;
+  width: 100%;
+  background: #303d74;
+  color: white;
+  margin-bottom: 0.5em;
+}
+
+main {
+  width: 90%;
+  margin-left: 5%;
+}
+
+footer {
+  color: white;
+  height: 5em;
+  margin-top: 1em;
+  background: #303d74;
+}
+
+@media only screen and (min-width: 640px) {
+
+}
