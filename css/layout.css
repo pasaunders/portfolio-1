@@ -1,9 +1,10 @@
 header {
-  height: 7em;
   width: 100%;
   background: #303d74;
   color: white;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding-bottom: 1em;
 }
 
 main {
