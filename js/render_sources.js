@@ -5,6 +5,7 @@ function Interest(interest) {
   this.interestImg = interest.interestImg;
   this.interestText = interest.interestText;
   this.interestUrl = interest.interestUrl;
+  this.lastWorked = interest.lastWorked;
 }
 
 Interest.prototype.toHtml = function() {
@@ -20,6 +21,10 @@ Interest.prototype.toHtml = function() {
 
 interests.forEach(function(interest) {
   allInterests.push(new Interest(interest));
+});
+
+allInterests.sort(function(timeA, timeB) {
+  return (new Date(timeB.lastWorked) - new Date(timeA.lastWorked));
 });
 
 allInterests.forEach(function(interest) {
