@@ -4,6 +4,7 @@ function Interest(interest) {
   this.interestName = interest.interestName;
   this.interestImg = interest.interestImg;
   this.interestText = interest.interestText;
+  this.interestUrl = interest.interestUrl;
 }
 
 Interest.prototype.toHtml = function() {
@@ -11,6 +12,7 @@ Interest.prototype.toHtml = function() {
   $interestTemplate.find('h2').text(this.interestName);
   $interestTemplate.find('img').attr('src', this.interestImg);
   $interestTemplate.find('p').text(this.interestText);
+  $interestTemplate.find('a').attr('href', this.interestUrl);
   $interestTemplate.removeClass('template');
   $interestTemplate.addClass('interest');
   return $interestTemplate;
