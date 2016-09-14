@@ -1,0 +1,30 @@
+header {
+  width: 100%;
+  background: #303d74;
+  color: white;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding-bottom: 1em;
+}
+
+main {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.template {
+  display: none;
+}
+
+footer {
+  color: white;
+  height: 5em;
+  margin-top: 1em;
+  background: #303d74;
+}
+
+@media only screen and (min-width: 1021px) {
+  footer {
+    clear: both;
+  }
+}

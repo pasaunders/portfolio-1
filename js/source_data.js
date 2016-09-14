@@ -1,0 +1,23 @@
+var interests = [ //eslint-disable-line
+  {
+    interestName: 'Northwall',
+    interestImg: 'img/northwall.png',
+    interestText: 'Northwall is an SNES-style RPG that\'s free to download and play, designed and built by Steven.',
+    interestUrl: 'https://www.youtube.com/watch?v=eFQYa-DtZyY',
+    lastWorked: '2016-07-28'
+  },
+  {
+    interestName: 'Voice Over',
+    interestImg: 'img/vo.png',
+    interestText: 'Steven has produced audiobooks for Audible.com and provided voices for several small projects, including two games on Steam.',
+    interestUrl: 'https://store.steampowered.com/app/278570',
+    lastWorked: '2016-09-05'
+  },
+  {
+    interestName: 'Magic',
+    interestImg: 'img/magic.png',
+    interestText: 'Magic: The Gathering is a collectible trading card game. Steven and a few other members of Code Fellows play a variant called EDH or Commander.',
+    interestUrl: 'http://tappedout.net/mtg-decks/10-08-16-Ptu-werewolves/',
+    lastWorked: '2016-09-10'
+  }
+];

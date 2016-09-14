@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/icons.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/vendor/reset.css" rel="stylesheet">
+    <link href="css/vendor/icons.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+    <link href="css/module.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -15,18 +17,19 @@
         <ul>
           <li><a href="http://batemanvo.github.io/bus-mall/index.html">BusMall</a></li>
           <li><a href="http://batemanvo.github.io/embody/index.html">Embody</a></li>
-          <li><a href="https://www.youtube.com/watch?v=eFQYa-DtZyY">Northwall</a></li>
-          <li><a href="http://store.steampowered.com/app/362160/">Voice-Over</a></li>
-          <li><a href="http://tappedout.net/mtg-decks/10-08-16-Ptu-werewolves/">Magic: The Gathering</a></li>
         </ul>
       </navbar>
     </header>
 
     <main>
-      <img class="hero_img" src="img/wax_obama.jpg">
-      <h2>About</h2>
-      <p>Steven is a Washington-grown web developer who is currently attending Code Fellows. Coming from a background of voice overs, audiobooks, game design, and holding a BA in drama, he's now adding languages of the web to his repertoire.</p>
-      <p>When not attending his coding classes in downtown Seattle, he has recently restarted his long-lost interest in rollerblading, and is generally otherwise found spending time with his fiancee or perhaps at one of the local MOX shops.</p>
+      <section id="interests">
+        <section class="template">
+          <h2>Name</h2>
+          <a href=""><img src=""></a>
+          <p id="description">Description</p>
+          <p>Last worked on: <span>days</span> days ago.</p>
+        </section>
+      </section>
     </main>
 
     <footer>
@@ -34,7 +37,8 @@
       <a href="http://www.github.com/batemanvo"><div class="icon-github"></div></a>
     </footer>
 
-
-    <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="js/source_data.js"></script>
+    <script src="js/render_sources.js"></script>
   </body>
 </html>

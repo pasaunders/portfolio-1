@@ -1,38 +1,3 @@
-header {
-  height: 7em;
-  width: 100%;
-  background: #303d74;
-  color: white;
-  margin-bottom: 0.5em;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-header img {
-  height: 4em;
-  width: 4em;
-  float: left;
-  margin-left: 0.5em;
-  margin-top: 1.0em;
-  border-radius: 50%;
-}
-
-main img {
-  width: 90%;
-  height: auto;
-  margin-left: 5%;
-}
-
-h1 {
-  margin-top: 1.0em;
-  margin-left: 0.3em;
-  font-size: 2em;
-  float: left;
-}
-
 .navbar ul {
   display: none;
 }
@@ -44,7 +9,6 @@ h1 {
 }
 
 .navbar:hover ul {
-  margin-bottom: 0.5em;
   margin-top: 0.5em;
   float: right;
   display: block;
@@ -59,32 +23,9 @@ h1 {
   background: #7b85ad;
 }
 
-main {
+.interest {
   width: 90%;
   margin-left: 5%;
-}
-
-h2 {
-  font-size: 2em;
-  text-align: center;
-  margin: 0.5em 0;
-}
-
-p {
-  margin: 1em;
-}
-
-footer {
-  color: white;
-  height: 5em;
-  margin-top: 1em;
-  background: #303d74;
-}
-
-footer p {
-  margin-top: 1.5em;
-  font-size: 1.2em;
-  float: left;
 }
 
 .icon-github {
@@ -95,13 +36,9 @@ footer p {
   transform: scale(1.5);
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 1021px) {
   .icon-menu {
     display: none;
-  }
-
-  header img {
-    margin-left: 5.1%;
   }
 
   .icon-github:hover {
@@ -113,7 +50,7 @@ footer p {
   .navbar ul {
     display: block;
     float: right;
-    margin-top: 2em;
+    margin-top: 1.5em;
     margin-right: 2em;
   }
 
@@ -134,12 +71,13 @@ footer p {
     color: #303d74;
   }
 
-  p {
-    width: 40%;
-    margin-left: 30%;
+  .interest {
+    width: 30%;
+    margin-left: 3%;
+    float: left;
   }
 
-  footer p {
+  .interest img {
     margin-left: 5%;
   }
 }
