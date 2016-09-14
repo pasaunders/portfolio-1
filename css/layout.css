@@ -16,6 +16,11 @@ main {
   display: none;
 }
 
+.interest {
+  width: 90%;
+  margin-left: 5%;
+}
+
 footer {
   color: white;
   height: 5em;
