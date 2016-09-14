@@ -12,6 +12,7 @@ Interest.prototype.toHtml = function() {
   $interestTemplate.find('img').attr('src', this.interestImg);
   $interestTemplate.find('p').text(this.interestText);
   $interestTemplate.removeClass('template');
+  $interestTemplate.addClass('interest');
   return $interestTemplate;
 };
 

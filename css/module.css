@@ -24,6 +24,11 @@
   background: #7b85ad;
 }
 
+.interest {
+  width: 90%;
+  margin-left: 5%;
+}
+
 .icon-github {
   margin-top: 2em;
   margin-right: 2em;
@@ -32,7 +37,7 @@
   transform: scale(1.5);
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 1021px) {
   .icon-menu {
     display: none;
   }
@@ -65,5 +70,11 @@
   .navbar li:hover {
     background: #fff;
     color: #303d74;
+  }
+
+  .interest {
+    width: 30%;
+    margin-left: 3%;
+    float: left;
   }
 }

@@ -19,18 +19,29 @@ h1 {
   float: left;
 }
 
+h2 {
+  font-size: 1.3em;
+  text-decoration: underline;
+  margin-bottom: 0.5em;
+}
+
+main img {
+  margin-bottom: 0.5em;
+}
+
+main p {
+  margin-bottom: 1em;
+}
+
 footer p {
   margin-top: 1.5em;
   font-size: 1.2em;
+  margin-left: 5%;
   float: left;
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 1021px) {
   header img {
-    margin-left: 5%;
-  }
-
-  footer p {
     margin-left: 5%;
   }
 }
