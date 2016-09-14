@@ -55,6 +55,10 @@ footer p {
   transform: scale(1.5);
 }
 
+.interest img:hover {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 1021px) {
   header img {
     margin-left: 8%;
