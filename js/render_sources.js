@@ -21,14 +21,25 @@ Interest.prototype.toHtml = function() {
   return $interestTemplate;
 };
 
-interests.forEach(function(interest) {
-  allInterests.push(new Interest(interest));
-});
+function createAndSort() {
+  interests.forEach(function(interest) {
+    allInterests.push(new Interest(interest));
+  });
 
-allInterests.sort(function(timeA, timeB) {
-  return (new Date(timeB.lastWorked) - new Date(timeA.lastWorked));
-});
+  allInterests.sort(function(timeA, timeB) {
+    return (new Date(timeB.lastWorked) - new Date(timeA.lastWorked));
+  });
+}
 
-allInterests.forEach(function(interest) {
-  $('#interests').append(interest.toHtml());
-});
+function render() {
+  allInterests.forEach(function(interest) {
+    $('#interests').append(interest.toHtml());
+  });
+}
+
+function init() {
+  createAndSort();
+  render();
+}
+
+init();
