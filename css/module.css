@@ -9,7 +9,6 @@
 }
 
 .navbar:hover ul {
-  margin-bottom: 0.5em;
   margin-top: 0.5em;
   float: right;
   display: block;
@@ -51,7 +50,7 @@
   .navbar ul {
     display: block;
     float: right;
-    margin-top: 2em;
+    margin-top: 1.5em;
     margin-right: 2em;
   }
 
