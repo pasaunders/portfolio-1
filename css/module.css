@@ -59,6 +59,11 @@ footer p {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+  background: #7b85ad;
+}
+
 @media only screen and (min-width: 815px) {
     header img {
       margin-left: 8%;
