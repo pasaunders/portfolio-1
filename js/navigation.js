@@ -41,10 +41,15 @@ navigation.showClick = function () {
 };
 
 navigation.articlePreviews = function() {
-  var $hiddenStuff = $('.interest').find('button ~ *');
-  $hiddenStuff.hide();
+  $('.interest').find('button ~ *').hide();
   $('.interest').on('click', 'button', function() {
-    $(this).parent().find('button ~ *').fadeIn();
+    $(this).parent().find('button ~ *').toggle();
+    $('.interest p:nth-child(2)').toggle();
+    if ($(this).text() === 'Hide') {
+      $(this).text('More');
+    } else {
+      $(this).text('Hide');
+    }
   });
 };
 
