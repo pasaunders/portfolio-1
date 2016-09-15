@@ -3,7 +3,9 @@ var navigation = {};
 navigation.filterCriteria = function() {
   $('.interest').each(function() {
     var category = $(this).attr('data-category');
-    $('select').append('<option value="' + category + '">' + category + '</option>');
+    if ($('select option[value="' + category + '"]').length === 0) {
+      $('select').append('<option value="' + category + '">' + category + '</option>');
+    }
   });
 };
 

@@ -42,6 +42,6 @@ var interests = [ //eslint-disable-line
     interestText: 'Embody is an app that allows physical therapists and their patients to better track their exercise homework and feedback about their exercises.',
     interestUrl: 'http://batemanvo.github.io/embody/index.html',
     lastWorked: '2016-09-09',
-    category: 'Code Fellow Apps'
+    category: 'Code Fellows Apps'
   }
 ];
