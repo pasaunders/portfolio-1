@@ -9,6 +9,18 @@ navigation.filterCriteria = function() {
   });
 };
 
+navigation.executeFilter = function() {
+  $('select').on('change', function() {
+    if ($(this).val()) {
+      $('.interest').hide();
+      $('.interest[data-category="' + $(this).val() + '"]').fadeIn();
+    } else {
+      $('.interest').fadeIn();
+      $('.template').hide();
+    }
+  });
+};
+
 navigation.showClick = function () {
   $('.navbar li').on('click', function() {
     $('section').not('.interest').hide();
@@ -28,6 +40,7 @@ navigation.articlePreviews = function() {
   });
 };
 
+navigation.executeFilter();
 navigation.filterCriteria();
 navigation.showClick();
 navigation.articlePreviews();
