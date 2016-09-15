@@ -59,49 +59,60 @@ footer p {
   cursor: pointer;
 }
 
+button:hover {
+  cursor: pointer;
+  background: #7b85ad;
+}
+
+@media only screen and (min-width: 815px) {
+    header img {
+      margin-left: 8%;
+    }
+
+    .icon-menu {
+      display: none;
+    }
+    .icon-github:hover {
+      background: #fff;
+      color: #303d74;
+      border-radius: 50%;
+    }
+
+    .navbar ul {
+      display: block;
+      float: right;
+      margin-top: 1.5em;
+      margin-right: 2em;
+    }
+
+    .navbar li {
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .navbar:hover ul {
+      margin-top: 1.5em;
+      margin-right: 2em;
+      float: right;
+      display: block;
+    }
+
+    .navbar li:hover {
+      background: #fff;
+      color: #303d74;
+    }
+
+    .interest {
+      width: 45%;
+      margin-left: 5%;
+      float: left;
+    }
+}
+
 @media only screen and (min-width: 1021px) {
-  header img {
-    margin-left: 8%;
-  }
-
-  .icon-menu {
-    display: none;
-  }
-
-  .icon-github:hover {
-    background: #fff;
-    color: #303d74;
-    border-radius: 50%;
-  }
-
-  .navbar ul {
-    display: block;
-    float: right;
-    margin-top: 1.5em;
-    margin-right: 2em;
-  }
-
-  .navbar li {
-    border-radius: 5px;
-    display: inline-block;
-  }
-
-  .navbar:hover ul {
-    margin-top: 2em;
-    margin-right: 2em;
-    float: right;
-    display: block;
-  }
-
-  .navbar li:hover {
-    background: #fff;
-    color: #303d74;
-  }
-
   .interest {
     width: 30%;
     margin-left: 3%;
-    float: left;
   }
 
   .interest img {

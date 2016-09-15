@@ -15,20 +15,30 @@
       <navbar class="navbar">
         <div class="icon-menu"></div>
         <ul>
-          <li><a href="http://batemanvo.github.io/bus-mall/index.html">BusMall</a></li>
-          <li><a href="http://batemanvo.github.io/embody/index.html">Embody</a></li>
+          <li>Interests</li>
+          <li>About</li>
         </ul>
       </navbar>
     </header>
 
     <main>
+      <select>
+        <option value="">-- Filter by category --</option>
+      </select>
       <section id="interests">
         <section class="template">
           <h2>Name</h2>
+          <p>Short Desc</p>
+          <button>More</button>
           <a href=""><img src=""></a>
           <p id="description">Description</p>
           <p>Last worked on: <span>days</span> days ago.</p>
         </section>
+      </section>
+      <section id="about">
+        <h2>About</h2>
+        <p>Steven is a Washington-grown web developer who is currently attending Code Fellows. Coming from a background of voice overs, audiobooks, game design, and holding a BA in drama, he's now adding languages of the web to his repertoire.</p>
+        <p>When not attending his coding classes in downtown Seattle, he has recently restarted his long-lost interest in rollerblading, and is generally otherwise found spending time with his fiancee or perhaps at one of the local MOX shops.</p>
       </section>
     </main>
 
@@ -40,5 +50,6 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="js/source_data.js"></script>
     <script src="js/render_sources.js"></script>
+    <script src="js/navigation.js"></script>
   </body>
 </html>

@@ -6,15 +6,19 @@ function Interest(interest) {
   this.interestText = interest.interestText;
   this.interestUrl = interest.interestUrl;
   this.lastWorked = interest.lastWorked;
+  this.shortDesc = interest.shortDesc;
+  this.category = interest.category;
 }
 
 Interest.prototype.toHtml = function() {
   var $interestTemplate = $('.template').clone();
   var daysAgo = new Date() - new Date(this.lastWorked);
+  $interestTemplate.attr('data-category', this.category);
+  $interestTemplate.find('p:nth-child(2)').text(this.shortDesc);
+  $interestTemplate.find('a').attr('href', this.interestUrl);
   $interestTemplate.find('h2').text(this.interestName);
   $interestTemplate.find('img').attr('src', this.interestImg);
   $interestTemplate.find('#description').text(this.interestText);
-  $interestTemplate.find('a').attr('href', this.interestUrl);
   $interestTemplate.find('span').text(Math.floor(daysAgo / 1000 / 60 / 60 / 24));
   $interestTemplate.removeClass('template');
   $interestTemplate.addClass('interest');
