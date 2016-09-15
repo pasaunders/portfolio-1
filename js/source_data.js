@@ -29,7 +29,7 @@ var interests = [ //eslint-disable-line
   {
     interestName: 'BusMall',
     shortDesc: 'A small app made in the 3rd week of 201.',
-    interestImg: 'http://placehold.it/300x300',
+    interestImg: 'img/bus-mall.png',
     interestText: 'BusMall is a focus group app that lets the user select from 1 of 3 images which product they like the most, then graphs the results.',
     interestUrl: 'http://batemanvo.github.io/bus-mall/index.html',
     lastWorked: '2016-09-01',
@@ -37,7 +37,7 @@ var interests = [ //eslint-disable-line
   },
   {
     interestName: 'Embody',
-    interestImg: 'http://placehold.it/300x300',
+    interestImg: 'img/embody.png',
     shortDesc: 'Final project app for 201.',
     interestText: 'Embody is an app that allows physical therapists and their patients to better track their exercise homework and feedback about their exercises.',
     interestUrl: 'http://batemanvo.github.io/embody/index.html',
