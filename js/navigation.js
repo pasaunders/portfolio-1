@@ -10,7 +10,11 @@ navigation.showClick = function () {
 };
 
 navigation.articlePreviews = function() {
-  $('.interest').find('button ~ *').hide();
+  var $hiddenStuff = $('.interest').find('button ~ *');
+  $hiddenStuff.hide();
+  $('.interest').on('click', 'button', function() {
+    $(this).parent().find('button ~ *').fadeIn();
+  });
 };
 
 navigation.showClick();
