@@ -14,7 +14,6 @@ Interest.prototype.toHtml = function() {
   $interestTemplate.find('h2').text(this.interestName);
   $interestTemplate.find('img').attr('src', this.interestImg);
   $interestTemplate.find('#description').text(this.interestText);
-  $interestTemplate.find('a').attr('href', this.interestUrl);
   $interestTemplate.find('span').text(Math.floor(daysAgo / 1000 / 60 / 60 / 24));
   $interestTemplate.removeClass('template');
   $interestTemplate.addClass('interest');
