@@ -1,5 +1,12 @@
 var navigation = {};
 
+navigation.filterCriteria = function() {
+  $('.interest').each(function() {
+    var category = $(this).attr('data-category');
+    $('select').append('<option value="' + category + '">' + category + '</option>');
+  });
+};
+
 navigation.showClick = function () {
   $('.navbar li').on('click', function() {
     $('section').not('.interest').hide();
@@ -17,5 +24,6 @@ navigation.articlePreviews = function() {
   });
 };
 
+navigation.filterCriteria();
 navigation.showClick();
 navigation.articlePreviews();
