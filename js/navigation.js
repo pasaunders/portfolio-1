@@ -9,5 +9,8 @@ navigation.showClick = function () {
   });
 };
 
+navigation.articlePreviews = function() {
+  
+}
 
 navigation.showClick();

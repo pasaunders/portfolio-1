@@ -6,11 +6,13 @@ function Interest(interest) {
   this.interestText = interest.interestText;
   this.interestUrl = interest.interestUrl;
   this.lastWorked = interest.lastWorked;
+  this.shortDesc = interest.shortDesc;
 }
 
 Interest.prototype.toHtml = function() {
   var $interestTemplate = $('.template').clone();
   var daysAgo = new Date() - new Date(this.lastWorked);
+  $interestTemplate.find('p:nth-child(2)').text(this.shortDesc);
   $interestTemplate.find('h2').text(this.interestName);
   $interestTemplate.find('img').attr('src', this.interestImg);
   $interestTemplate.find('#description').text(this.interestText);
