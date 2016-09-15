@@ -28,7 +28,7 @@ footer {
   background: #303d74;
 }
 
-@media only screen and (min-width: 1021px) {
+@media only screen and (min-width: 815px) {
   footer {
     clear: both;
   }
