@@ -27,6 +27,11 @@ navigation.showClick = function () {
     var section = $(this).text().toLowerCase();
     console.log('#' + section);
     $('#' + section).fadeIn();
+    if ($('select').val()) {
+      $('select').val('');
+      $('.interest').fadeIn();
+      $('.template').hide();
+    }
   });
 
   $('.navbar li:contains(Interests)').click();
