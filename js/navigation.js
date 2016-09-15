@@ -16,6 +16,8 @@ navigation.showClick = function () {
     console.log('#' + section);
     $('#' + section).fadeIn();
   });
+
+  $('.navbar li:contains(Interests)').click();
 };
 
 navigation.articlePreviews = function() {
