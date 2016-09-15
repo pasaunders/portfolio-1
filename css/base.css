@@ -16,6 +16,22 @@ h2 {
   margin-bottom: 0.5em;
 }
 
+select {
+  margin-bottom: 1em;
+  background: #fff;
+  border: 2px black solid;
+}
+
+button {
+  background: #303d74;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 0.3em;
+  margin-bottom: 1em;
+}
+
 @media only screen and (min-width: 1021px) {
   h2 {
     text-align: center;

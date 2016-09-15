@@ -27,10 +27,13 @@ navigation.showClick = function () {
     var section = $(this).text().toLowerCase();
     console.log('#' + section);
     $('#' + section).fadeIn();
-    if ($('select').val()) {
-      $('select').val('');
+    $('select').val('');
+    if (section === 'interests') {
+      $('select').fadeIn();
       $('.interest').fadeIn();
       $('.template').hide();
+    } else {
+      $('select').hide();
     }
   });
 

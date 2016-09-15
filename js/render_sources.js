@@ -15,6 +15,7 @@ Interest.prototype.toHtml = function() {
   var daysAgo = new Date() - new Date(this.lastWorked);
   $interestTemplate.attr('data-category', this.category);
   $interestTemplate.find('p:nth-child(2)').text(this.shortDesc);
+  $interestTemplate.find('a').attr('href', this.interestUrl);
   $interestTemplate.find('h2').text(this.interestName);
   $interestTemplate.find('img').attr('src', this.interestImg);
   $interestTemplate.find('#description').text(this.interestText);
