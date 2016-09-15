@@ -10,7 +10,8 @@ navigation.showClick = function () {
 };
 
 navigation.articlePreviews = function() {
-  
-}
+  $('.interest').find('button ~ *').hide();
+};
 
 navigation.showClick();
+navigation.articlePreviews();
