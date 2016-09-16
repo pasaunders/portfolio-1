@@ -1,31 +1,20 @@
 var allInterests = [];
+var sourceRender = {};
 
 function Interest(interest) {
-  this.interestName = interest.interestName;
-  this.interestImg = interest.interestImg;
-  this.interestText = interest.interestText;
-  this.interestUrl = interest.interestUrl;
-  this.lastWorked = interest.lastWorked;
-  this.shortDesc = interest.shortDesc;
-  this.category = interest.category;
+  for (var key in interest) {
+    this[key] = interest[key];
+  }
+  this.daysAgo = Math.floor((new Date() - new Date(this.lastWorked)) / 1000 / 60 / 60 / 24);
 }
 
 Interest.prototype.toHtml = function() {
-  var $interestTemplate = $('.template').clone();
-  var daysAgo = new Date() - new Date(this.lastWorked);
-  $interestTemplate.attr('data-category', this.category);
-  $interestTemplate.find('p:nth-child(2)').text(this.shortDesc);
-  $interestTemplate.find('a').attr('href', this.interestUrl);
-  $interestTemplate.find('h2').text(this.interestName);
-  $interestTemplate.find('img').attr('src', this.interestImg);
-  $interestTemplate.find('#description').text(this.interestText);
-  $interestTemplate.find('span').text(Math.floor(daysAgo / 1000 / 60 / 60 / 24));
-  $interestTemplate.removeClass('template');
-  $interestTemplate.addClass('interest');
-  return $interestTemplate;
+  var source = $('#interest-template').html();
+  var template = Handlebars.compile(source);
+  return template(this);
 };
 
-function createAndSort() {
+sourceRender.createAndSort = function() {
   interests.forEach(function(interest) {
     allInterests.push(new Interest(interest));
   });
@@ -33,17 +22,10 @@ function createAndSort() {
   allInterests.sort(function(timeA, timeB) {
     return (new Date(timeB.lastWorked) - new Date(timeA.lastWorked));
   });
-}
+};
 
-function render() {
+sourceRender.render = function() {
   allInterests.forEach(function(interest) {
     $('#interests').append(interest.toHtml());
   });
-}
-
-function init() {
-  createAndSort();
-  render();
-}
-
-init();
+};

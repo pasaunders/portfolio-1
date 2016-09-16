@@ -25,7 +25,6 @@ navigation.showClick = function () {
   $('.navbar li').on('click', function() {
     $('section').not('.interest').hide();
     var section = $(this).text().toLowerCase();
-    console.log('#' + section);
     $('#' + section).fadeIn();
     $('select').val('');
     if (section === 'interests') {
@@ -53,7 +52,13 @@ navigation.articlePreviews = function() {
   });
 };
 
-navigation.executeFilter();
-navigation.filterCriteria();
-navigation.showClick();
-navigation.articlePreviews();
+function init() {
+  sourceRender.createAndSort();
+  sourceRender.render();
+  navigation.executeFilter();
+  navigation.filterCriteria();
+  navigation.showClick();
+  navigation.articlePreviews();
+}
+
+init();
