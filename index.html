@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Steven's 301 Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/vendor/reset.css" rel="stylesheet">
     <link href="css/vendor/icons.css" rel="stylesheet">
     <link href="css/base.css" rel="stylesheet">
     <link href="css/layout.css" rel="stylesheet">
     <link href="css/module.css" rel="stylesheet">
+    <script id="interest-template" type="text/x-handlebars-template">
+      <section class="interest" data-category="{{category}}">
+        <h2>{{interestName}}</h2>
+        <p>{{shortDesc}}</p>
+        <button>More</button>
+        <a href="{{interestUrl}}"><img src="{{interestImg}}"></a>
+        <p id="description">{{interestText}}</p>
+        <p>Last worked on: <span>{{daysAgo}}</span> days ago.</p>
+      </section>
+    </script>
   </head>
   <body>
     <header>
@@ -25,16 +36,7 @@
       <select>
         <option value="">-- Filter by category --</option>
       </select>
-      <section id="interests">
-        <section class="template">
-          <h2>Name</h2>
-          <p>Short Desc</p>
-          <button>More</button>
-          <a href=""><img src=""></a>
-          <p id="description">Description</p>
-          <p>Last worked on: <span>days</span> days ago.</p>
-        </section>
-      </section>
+      <section id="interests"></section>
       <section id="about">
         <h2>About</h2>
         <p>Steven is a Washington-grown web developer who is currently attending Code Fellows. Coming from a background of voice overs, audiobooks, game design, and holding a BA in drama, he's now adding languages of the web to his repertoire.</p>
@@ -47,6 +49,7 @@
       <a href="http://www.github.com/batemanvo"><div class="icon-github"></div></a>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="js/source_data.js"></script>
     <script src="js/render_sources.js"></script>

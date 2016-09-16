@@ -16,7 +16,6 @@ navigation.executeFilter = function() {
       $('.interest[data-category="' + $(this).val() + '"]').fadeIn();
     } else {
       $('.interest').fadeIn();
-      $('.template').hide();
     }
   });
 };
@@ -25,13 +24,11 @@ navigation.showClick = function () {
   $('.navbar li').on('click', function() {
     $('section').not('.interest').hide();
     var section = $(this).text().toLowerCase();
-    console.log('#' + section);
     $('#' + section).fadeIn();
     $('select').val('');
     if (section === 'interests') {
       $('select').fadeIn();
       $('.interest').fadeIn();
-      $('.template').hide();
     } else {
       $('select').hide();
     }
@@ -53,7 +50,13 @@ navigation.articlePreviews = function() {
   });
 };
 
-navigation.executeFilter();
-navigation.filterCriteria();
-navigation.showClick();
-navigation.articlePreviews();
+function init() {
+  sourceRender.createAndSort();
+  sourceRender.render();
+  navigation.executeFilter();
+  navigation.filterCriteria();
+  navigation.showClick();
+  navigation.articlePreviews();
+}
+
+init();
