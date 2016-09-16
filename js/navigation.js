@@ -16,7 +16,6 @@ navigation.executeFilter = function() {
       $('.interest[data-category="' + $(this).val() + '"]').fadeIn();
     } else {
       $('.interest').fadeIn();
-      $('.template').hide();
     }
   });
 };
@@ -30,7 +29,6 @@ navigation.showClick = function () {
     if (section === 'interests') {
       $('select').fadeIn();
       $('.interest').fadeIn();
-      $('.template').hide();
     } else {
       $('select').hide();
     }
