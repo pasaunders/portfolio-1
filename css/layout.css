@@ -25,7 +25,5 @@ footer {
 }
 
 @media only screen and (min-width: 815px) {
-  footer {
-    clear: both;
-  }
+
 }

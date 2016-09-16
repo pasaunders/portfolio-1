@@ -72,6 +72,7 @@ button:hover {
     .icon-menu {
       display: none;
     }
+
     .icon-github:hover {
       background: #fff;
       color: #303d74;
