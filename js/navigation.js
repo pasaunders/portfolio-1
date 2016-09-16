@@ -41,7 +41,7 @@ navigation.articlePreviews = function() {
   $('.interest').find('button ~ *').hide();
   $('.interest').on('click', 'button', function() {
     $(this).parent().find('button ~ *').toggle();
-    $('.interest p:nth-child(2)').toggle();
+    $(this).parent().find('p:nth-child(2)').toggle();
     if ($(this).text() === 'Hide') {
       $(this).text('More');
     } else {
