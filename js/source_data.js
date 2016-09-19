@@ -5,7 +5,7 @@ var interests = [ //eslint-disable-line
     interestImg: 'img/northwall.png',
     interestText: 'Northwall is an SNES-style RPG that\'s free to download and play, designed and built by Steven.',
     interestUrl: 'https://www.youtube.com/watch?v=eFQYa-DtZyY',
-    lastWorked: '2016-07-28',
+    lastWorked: '2016-09-18',
     category: 'Game Design'
   },
   {
