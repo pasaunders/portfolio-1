@@ -1,5 +1,7 @@
 var navigation = {}; //An empty object to hold the methods in the navigation.js file.
 
+// Run through all the objects in the allInterest array. For each, append the interest to the main page and
+// append the category options to the select box if that category has not appeared before.
 navigation.appendToDom = function() {
   Interest.allInterests.forEach(function(interest) {
     $('#interests').append(interest.toHtml('#interest-template'));
@@ -72,6 +74,9 @@ function init() {
   navigation.articlePreviews();
 };
 
+// If something exists in localStorage called interests, then call loadInterests with the information in it before
+// calling the init function. Otherwise, get the data by making an AJAX call for the source_data.json file,
+// put it in localStorage, then call loadInterests and init.
 Interest.setInterests = function() {
   if (localStorage.interests) {
     Interest.loadInterests(JSON.parse(localStorage.interests));

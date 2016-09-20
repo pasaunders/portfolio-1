@@ -11,12 +11,15 @@ function Interest(interest) {
 
 Interest.allInterests = [];
 
+// For each object in the interests array passed from Interest.setInterests, create a new object and add it to the
+// allInterests array.
 Interest.loadInterests = function(interests) {
   interests.forEach(function(interest) {
     Interest.allInterests.push(new Interest(interest));
   });
 };
 
+// Take the template ID, make a template of the corresponding ID, then return it.
 Interest.prototype.toHtml = function(templateId) {
   var source = $(templateId).html();
   var template = Handlebars.compile(source);
