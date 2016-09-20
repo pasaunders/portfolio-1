@@ -1,14 +1,10 @@
 var navigation = {}; //An empty object to hold the methods in the navigation.js file.
 
-// For each interest section created, get the value of its data-category attribute. Then check if there are already
-// any option elements within a select element that already have the value of one of those categories. If not,
-// create an option element with the value attribute equal to the interest section's data-category attribute and
-// append it to the select element.
-navigation.filterCriteria = function() {
-  $('.interest').each(function() {
-    var category = $(this).attr('data-category');
-    if ($('select option[value="' + category + '"]').length === 0) {
-      $('select').append('<option value="' + category + '">' + category + '</option>');
+navigation.appendToDom = function() {
+  Interest.allInterests.forEach(function(interest) {
+    $('#interests').append(interest.toHtml('#interest-template'));
+    if ($('option[value="' + interest.category + '"]').length === 0) {
+      $('select').append(interest.toHtml('#category-template'));
     }
   });
 };
@@ -68,15 +64,3 @@ navigation.articlePreviews = function() {
     }
   });
 };
-
-// Call all methods from render_sources.js and navigation.js.
-function init() {
-  sourceRender.createAndSort();
-  sourceRender.render();
-  navigation.executeFilter();
-  navigation.filterCriteria();
-  navigation.showClick();
-  navigation.articlePreviews();
-}
-
-init();
