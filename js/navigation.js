@@ -1,14 +1,12 @@
 var navigation = {}; //An empty object to hold the methods in the navigation.js file.
 
-// For each interest section created, get the value of its data-category attribute. Then check if there are already
-// any option elements within a select element that already have the value of one of those categories. If not,
-// create an option element with the value attribute equal to the interest section's data-category attribute and
-// append it to the select element.
-navigation.filterCriteria = function() {
-  $('.interest').each(function() {
-    var category = $(this).attr('data-category');
-    if ($('select option[value="' + category + '"]').length === 0) {
-      $('select').append('<option value="' + category + '">' + category + '</option>');
+// Run through all the objects in the allInterest array. For each, append the interest to the main page and
+// append the category options to the select box if that category has not appeared before.
+navigation.appendToDom = function() {
+  Interest.allInterests.forEach(function(interest) {
+    $('#interests').append(interest.toHtml('#interest-template'));
+    if ($('option[value="' + interest.category + '"]').length === 0) {
+      $('select').append(interest.toHtml('#category-template'));
     }
   });
 };
@@ -69,14 +67,27 @@ navigation.articlePreviews = function() {
   });
 };
 
-// Call all methods from render_sources.js and navigation.js.
 function init() {
-  sourceRender.createAndSort();
-  sourceRender.render();
-  navigation.executeFilter();
-  navigation.filterCriteria();
+  navigation.appendToDom();
   navigation.showClick();
+  navigation.executeFilter();
   navigation.articlePreviews();
-}
+};
 
-init();
+// If something exists in localStorage called interests, then call loadInterests with the information in it before
+// calling the init function. Otherwise, get the data by making an AJAX call for the source_data.json file,
+// put it in localStorage, then call loadInterests and init.
+Interest.setInterests = function() {
+  if (localStorage.interests) {
+    Interest.loadInterests(JSON.parse(localStorage.interests));
+    init();
+  } else {
+    $.getJSON('js/source_data.json', function(data) {
+      localStorage.interests = JSON.stringify(data);
+      Interest.loadInterests(data);
+      init();
+    });
+  }
+};
+
+Interest.setInterests();

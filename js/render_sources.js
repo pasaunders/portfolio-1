@@ -1,6 +1,3 @@
-var allInterests = [];
-var sourceRender = {}; //Object to store functions in this file to remove variables from global space.
-
 // Constructor function for each interest.
 function Interest(interest) {
   for (var key in interest) {
@@ -12,28 +9,19 @@ function Interest(interest) {
   this.daysAgo = Math.floor((new Date() - new Date(this.lastWorked)) / 1000 / 60 / 60 / 24);
 }
 
-// Convert the object's properties into a Handlebars template.
-Interest.prototype.toHtml = function() {
-  var source = $('#interest-template').html();
+Interest.allInterests = [];
+
+// For each object in the interests array passed from Interest.setInterests, create a new object and add it to the
+// allInterests array.
+Interest.loadInterests = function(interests) {
+  interests.forEach(function(interest) {
+    Interest.allInterests.push(new Interest(interest));
+  });
+};
+
+// Take the template ID, make a template of the corresponding ID, then return it.
+Interest.prototype.toHtml = function(templateId) {
+  var source = $(templateId).html();
   var template = Handlebars.compile(source);
   return template(this);
-};
-
-// Get all the object data from source_data.js and instantiate new objects that are then pushed to the allInterests
-// array.
-sourceRender.createAndSort = function() {
-  interests.forEach(function(interest) {
-    allInterests.push(new Interest(interest));
-  });
-  // Sort the allInterests array from most recently worked on to least.
-  allInterests.sort(function(timeA, timeB) {
-    return (new Date(timeB.lastWorked) - new Date(timeA.lastWorked));
-  });
-};
-
-// Append all the objects in the allInterests array to the DOM by calling the toHtml() method.
-sourceRender.render = function() {
-  allInterests.forEach(function(interest) {
-    $('#interests').append(interest.toHtml());
-  });
 };

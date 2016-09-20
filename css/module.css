@@ -47,21 +47,37 @@ footer p {
   background: #7b85ad;
 }
 
-.icon-github {
-  margin-top: 2em;
-  margin-right: 2em;
-  float: right;
-  border: 1px #303d74 solid;
-  transform: scale(1.5);
-}
-
 .interest img:hover {
   cursor: pointer;
+}
+
+.icon-github {
+  border: 1px #303d74 solid;
+  clear: left;
+  float: left;
+  margin-top: 0.5em;
+  margin-left: 1.0em;
 }
 
 button:hover {
   cursor: pointer;
   background: #7b85ad;
+}
+
+@media only screen and (max-width: 270px) {
+  .icon-github {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 340px) {
+  .icon-github {
+    clear: none;
+    float: right;
+    transform: scale(1.5);
+    margin-top: 2em;
+    margin-right: 2em;
+  }
 }
 
 @media only screen and (min-width: 815px) {
