@@ -64,3 +64,25 @@ navigation.articlePreviews = function() {
     }
   });
 };
+
+function init() {
+  navigation.appendToDom();
+  navigation.showClick();
+  navigation.executeFilter();
+  navigation.articlePreviews();
+};
+
+Interest.setInterests = function() {
+  if (localStorage.interests) {
+    Interest.loadInterests(JSON.parse(localStorage.interests));
+    init();
+  } else {
+    $.getJSON('js/source_data.json', function(data) {
+      localStorage.interests = JSON.stringify(data);
+      Interest.loadInterests(data);
+      init();
+    });
+  }
+};
+
+Interest.setInterests();

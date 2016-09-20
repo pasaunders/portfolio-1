@@ -17,17 +17,6 @@ Interest.loadInterests = function(interests) {
   });
 };
 
-Interest.setInterests = function() {
-  if (localStorage.interests) {
-    Interest.loadInterests(JSON.parse(localStorage.interests));
-  } else {
-    $.getJSON('js/source_data.json', function(data) {
-      localStorage.interests = JSON.stringify(data);
-      Interest.loadInterests(data);
-    });
-  }
-};
-
 Interest.prototype.toHtml = function(templateId) {
   var source = $(templateId).html();
   var template = Handlebars.compile(source);
