@@ -17,6 +17,9 @@ Interest.loadInterests = function(interests) {
   interests.forEach(function(interest) {
     Interest.allInterests.push(new Interest(interest));
   });
+  Interest.allInterests.sort(function(timeA, timeB) {
+    return timeA.daysAgo - timeB.daysAgo;
+  });
 };
 
 // Take the template ID, make a template of the corresponding ID, then return it.
