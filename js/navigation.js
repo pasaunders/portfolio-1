@@ -82,15 +82,30 @@
   // put it in localStorage, then call loadInterests and init.
   Interest.setInterests = function() {
     if (localStorage.interests) {
-      Interest.loadInterests(JSON.parse(localStorage.interests));
-      init();
-    } else {
-      $.getJSON('js/source_data.json', function(data) {
-        localStorage.interests = JSON.stringify(data);
-        Interest.loadInterests(data);
-        init();
+      $.ajax({
+        url: 'js/source_data.json',
+        type: 'HEAD',
+        success: function(data, status, xhr) {
+          if (xhr.getResponseHeader('ETag') !== localStorage.eTag) {
+            Interests.makeFullCall();
+          } else {
+            Interest.loadInterests(JSON.parse(localStorage.interests));
+            init();
+          }
+        }
       });
+    } else {
+      Interest.makeFullCall();
     }
+  };
+
+  Interest.makeFullCall = function() {
+    $.getJSON('js/source_data.json', function(data, status, xhr) {
+      localStorage.eTag = xhr.getResponseHeader('ETag');
+      localStorage.interests = JSON.stringify(data);
+      Interest.loadInterests(data);
+      init();
+    });
   };
 
   module.navigation = navigation;
