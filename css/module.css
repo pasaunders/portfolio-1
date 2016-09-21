@@ -69,6 +69,10 @@ button:hover {
   list-style: disc;
 }
 
+#facts li ul li {
+  list-style: circle;
+}
+
 @media only screen and (max-width: 270px) {
   .icon-github {
     display: none;

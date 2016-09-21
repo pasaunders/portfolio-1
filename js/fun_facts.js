@@ -18,8 +18,24 @@
     });
   };
 
+  fun.lazy = function() {
+    return Interest.allInterests.filter(function(interest) {
+      return interest.daysAgo > 30;
+    }).map(function(interest) {
+      return interest.interestName;
+    });
+  };
+
   fun.printFacts = function() {
-    $('#facts').append('<li>Did you know the long descriptions of all the interests have exactly ' + fun.countDescWords() + ' words total in them?</li>');
+    var lazyDays = fun.lazy();
+    $('#facts').append('<li>Did you know the long descriptions of all the interests have exactly ' + fun.countDescWords() + ' words total in them?</li>')
+    .append('<li><ul>The number of interests that were worked on more than 30 days ago is ' + lazyDays.length + '! </ul></li>');
+    if (lazyDays.length > 0) {
+      $('#facts li ul').append('They are:');
+      lazyDays.forEach(function(name) {
+        $('#facts li ul').append('<li>' + name + '</li>');
+      });
+    }
   };
   module.fun = fun;
 })(window);
