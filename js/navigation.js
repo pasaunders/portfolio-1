@@ -87,7 +87,7 @@
         type: 'HEAD',
         success: function(data, status, xhr) {
           if (xhr.getResponseHeader('ETag') !== localStorage.eTag) {
-            Interests.makeFullCall();
+            Interest.makeFullCall();
           } else {
             Interest.loadInterests(JSON.parse(localStorage.interests));
             init();
