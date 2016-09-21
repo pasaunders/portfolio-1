@@ -35,7 +35,7 @@
   // elements with a class of interest. Otherwise, hide the select element.
   navigation.showClick = function () {
     $('.navbar li').on('click', function() {
-      $('section').not('.interest').hide();
+      $('section').not('.interest').not('#fun_facts').hide();
       var section = $(this).text().toLowerCase();
       $('#' + section).fadeIn();
       $('select').val('');
@@ -73,6 +73,8 @@
     navigation.showClick();
     navigation.executeFilter();
     navigation.articlePreviews();
+    fun.countDescWords();
+    fun.printFacts();
   };
 
   // If something exists in localStorage called interests, then call loadInterests with the information in it before
