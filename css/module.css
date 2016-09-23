@@ -64,6 +64,15 @@ button:hover {
   background: #7b85ad;
 }
 
+#facts li {
+  margin-left: 1.5%;
+  list-style: disc;
+}
+
+#facts li ul li {
+  list-style: circle;
+}
+
 @media only screen and (max-width: 270px) {
   .icon-github {
     display: none;
