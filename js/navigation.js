@@ -33,6 +33,8 @@
   // stored and set the value of the select element to an empty string.
   // If the text of the element that was clicked on is interests, then fade in the select element, and fade in all
   // elements with a class of interest. Otherwise, hide the select element.
+
+  //Patrick: This section looks like it could be dried out. Is there a way to associate the select element with .interest so that it fades in/out at the same time?
   navigation.showClick = function () {
     $('.navbar li').on('click', function() {
       $('section').not('.interest').not('#fun_facts').hide();
@@ -67,6 +69,7 @@
       }
     });
   };
+  //Patrick: slick use of JQeuery.
 
   function init() {
     navigation.appendToDom();
@@ -80,6 +83,8 @@
   // If something exists in localStorage called interests, then call loadInterests with the information in it before
   // calling the init function. Otherwise, get the data by making an AJAX call for the source_data.json file,
   // put it in localStorage, then call loadInterests and init.
+  //Patrick: init is called here to deal with asynch loading issues right? Is there a way to integrate
+  //loading from storage more completely into your progarm flow? Right now it reads as "ok first we load stuff, then run the program."
   Interest.setInterests = function() {
     if (localStorage.interests) {
       $.ajax({

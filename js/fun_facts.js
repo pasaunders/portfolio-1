@@ -44,3 +44,4 @@
   };
   module.fun = fun;
 })(window);
+//Patrick: this all seems very well put together. Do you think you could use handlebars to make adding additional facts easier?

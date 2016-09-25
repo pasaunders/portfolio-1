@@ -8,6 +8,8 @@
     // by 60 to get minutes, by 60 to get hours, and by 24 to get days, then round down to the nearest integer and
     // set that to be this object's daysAgo property.
     this.daysAgo = Math.floor((new Date() - new Date(this.lastWorked)) / 1000 / 60 / 60 / 24);
+    //Patrick: Is there a way to structure your data so that your last worked on date auto-updates
+    //from github? It would be easier to maintain your portfolio that way.
   }
 
   Interest.allInterests = [];
